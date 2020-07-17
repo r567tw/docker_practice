@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  myweb:
+    build:
+      context: .
+      args: 
+        whoami: "Tony"
+    image: r567tw/myweb:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - mainpage: /var/www/localhost/htdocs/ 
+networks:
+  mybridge001:
+  mybridge002:
+
+volumes:
+  mainpage:
